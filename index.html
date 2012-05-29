@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+<title>CSS Flexbox</title>
+<script src="javascript/Modernizr.flexbox.js"></script>
+<link rel="stylesheet" href="css/styles.css">
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-31819122-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</head>
+
+<body>
+
+<!-- 
+
+Use this for code: <code>.selector { color: black; } </code>
+
+Ideas:
+
+- Animating flex box properties e.g. flex: 1 -> flex: 2
+-
+
+-->
+
+<aside class="flexbox-message">
+<p>Hi, this page uses <a href="http://modernizr.com/">Modernizr</a> to detect support for <a href="http://dev.w3.org/csswg/css3-flexbox/">CSS Flexbox</a> which appears to be unsupported by this browser. If you would like to view the demos, check out <a href="http://caniuse.com/flexbox">browser support for CSS flexbox</a> and try using a supported browser.</p>
+</aside>
+
+
+
+<header id="page-header">
+  <h2 id="link-to-article">
+    <a href="http://net.tutsplus.com/tutorials/html-css-techniques/">Back to Nettuts article</a>
+  </h2>  
+  <h1 id="title">CSS Flexbox Examples</h1>
+</header>
+
+
+
+<style type="text/css">
+
+/* Example 1 */
+
+#example-1 .simple-example {
+  width: 90%;
+  background-color: #FCF8E3;
+  padding: 10px;
+  border: 1px solid #EEDC7D;
+
+  /* Old Syntax */
+  display: -webkit-box;
+  display: -moz-box;
+
+  /* New Syntax */
+  display: -webkit-flexbox;
+}
+
+#example-1 .simple-example > div {
+  margin-right: 5px;
+  margin-bottom: 5px;
+  width: 20%;
+  height: 50px;
+  padding: 6px;
+  -webkit-border-radius: 3px;
+  background-color: #3A87AD;
+  color:white;
+}
+
+
+
+
+
+
+
+
+
+
+/* Example 2 */
+
+#example-2 .orientation-example {
+  width: 90%;
+  background-color: #FCF8E3;
+  padding: 10px;
+  border: 1px solid #EEDC7D;
+
+  /* Old Syntax */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+
+  /* New Syntax */
+  display: -webkit-flexbox;
+  -webkit-flex-direction: column;
+
+}
+
+#example-2 .orientation-example > div {
+  margin-bottom: 5px;
+  height: 20px;
+  padding: 6px;
+  -webkit-border-radius: 3px;
+  background-color: #3A87AD;
+  color:white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Example 3 */
+
+#example-3 .alignment-example {
+  font-size: 0.8em;
+  width: 90%;
+  background-color: #FCF8E3;
+  padding: 3px 5px;
+  border: 1px solid #EEDC7D;
+
+  /* Old Syntax */
+  display: -webkit-box;
+  display: -moz-box;
+
+  /* New Syntax */
+  display: -webkit-flexbox;
+}
+
+#example-3 .alignment-example > div {
+  margin: 0 5px 0px 0;
+  padding: 2px 10px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #3A87AD;
+  color:white;
+}
+
+#example-3 h4 {
+  margin: 2% 0 2px 0;
+}
+
+#example-3 .alignment-start {
+  /* Old Syntax */
+  -webkit-box-pack: start;
+  -moz-box-pack: start;  
+
+  /* New Syntax */
+  -webkit-flex-pack: start;
+}
+
+#example-3 .alignment-end {
+  /* Old Syntax */
+  -webkit-box-pack: end;
+  -moz-box-pack: end;
+
+  /* New Syntax */
+  -webkit-flex-pack: end;
+}
+
+#example-3 .alignment-justify {
+  /* Old Syntax */
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+
+  /* New Syntax */
+  -webkit-flex-pack: justify;
+}
+
+#example-3 .alignment-center {
+  /* Old Syntax */
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+
+  /* New Syntax */
+  -webkit-flex-pack: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Example 4 */
+
+#example-4 .alignment-example {
+  font-size: 0.8em;
+  width: 90%;
+  background-color: #FCF8E3;
+  padding: 3px 5px;
+  border: 1px solid #EEDC7D;
+  height: 60px;
+
+  /* Old Syntax */
+  display: -webkit-box;
+  display: -moz-box;
+
+  /* New Syntax */
+  display: -webkit-flexbox;
+}
+
+#example-4 .alignment-example > div {
+  margin: 0 5px 0px 0;
+  padding: 2px 10px;
+  -webkit-border-radius: 3px;
+  background-color: #3A87AD;
+  color:white;
+}
+
+#example-4 h4 {
+  margin: 2% 0 2px 0;
+}
+
+#example-4 .alignment-start {
+  /* Old Syntax */
+  -webkit-box-align: start;
+  -moz-box-align: start;
+
+  /* New Syntax */
+  -webkit-flex-align: start;
+}
+
+#example-4 .alignment-end {
+  /* Old Syntax */
+  -webkit-box-align: end;
+  -moz-box-align: end;
+
+  /* New Syntax */
+  -webkit-flex-align: end;
+}
+
+#example-4 .alignment-center {
+  /* Old Syntax */
+  -webkit-box-align: center;
+  -moz-box-align: center;
+
+  /* New Syntax */
+  -webkit-flex-align: center;
+}
+
+#example-4 .alignment-baseline {
+  /* Old Syntax */
+  -webkit-box-align: baseline; 
+  -moz-box-align: baseline; 
+
+  /* New Syntax */
+  -webkit-flex-align: baseline;
+}
+
+#example-4 .alignment-stretch {
+  /* Old Syntax */
+  -webkit-box-align: stretch;
+  -moz-box-align: stretch;
+
+  /* New Syntax */
+  -webkit-flex-align: stretch;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Example 5 */
+
+#example-5 .distribute-example,
+#example-5 .different-flex-example,
+#example-5 .final-flex-example {
+  width: 90%;
+  background-color: #FCF8E3;
+  padding: 10px;
+  border: 1px solid #EEDC7D;
+
+  /* Old Syntax */
+  display: -webkit-box;
+  display: -moz-box;
+
+  /* New Syntax */
+  display: -webkit-flexbox;
+}
+
+#example-5 .distribute-example > div,
+#example-5 .different-flex-example > div,
+#example-5 .final-flex-example > div {
+  margin-right: 5px;
+  margin-bottom: 5px;
+  height: 50px;
+  padding: 6px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #3A87AD;
+  color:white;
+
+  /* Old Syntax */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+
+  /* New Syntax */
+  -webkit-flex: 1;
+
+}
+
+#example-5 .different-flex-example > div:nth-child(2) {
+  /* Old Syntax */
+  -webkit-box-flex: 2;
+  -moz-box-flex: 2;
+
+  /* New Syntax */
+  -webkit-flex: 2;  
+}
+
+
+#example-5 .final-flex-example > div:nth-child(2) {
+  /* Old Syntax */
+  -webkit-box-flex: 20;
+  -moz-box-flex: 20;
+
+  /* New Syntax */
+  -webkit-flex: 20;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Example 6 */
+
+#example-6 .ordering-example {
+  width: 90%;
+  background-color: #FCF8E3;
+  padding: 10px;
+  border: 1px solid #EEDC7D;
+
+  /* Old Syntax */
+  display: -webkit-box;
+  display: -moz-box;
+
+  /* New Syntax */
+  display: -webkit-flexbox;
+}
+
+#example-6 .ordering-example > div {
+  margin-right: 5px;
+  margin-bottom: 5px;
+  width: 20%;
+  height: 30px;
+  padding: 6px;
+  -webkit-border-radius: 3px;
+  background-color: #3A87AD;
+  color:white;
+}
+
+#example-6 .ordering-example > div:nth-child(1) {
+  /* Old Syntax */
+  display: -webkit-box;
+  -webkit-box-ordinal-group: 2;
+  -moz-box-ordinal-group: 2;
+  /* New Syntax */
+  -webkit-flex-order: 1;  
+}
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<article class="example" id="example-1">
+
+  <header>
+    <h1>Example 1 - Applying flexbox to the display CSS property</h1>
+    <p>In the first example, we can observe what happens to child elements (item 1, item 2 and item 3) when their parent element (the box surrounding the three elements) has the following applied to it: <code>display: flexbox;</code></p>
+    <p>Note: The parent element has its width set to 90% and the child elements (the three boxes) have their width set at 20%.</p>
+  </header>
+
+  <button class="btn" id="example1-toggle-flexbox">Toggle flex box on and off</button>
+<p>Value of the <code>display</code> property is currently: <code id="example1-status"></code> </p> 
+  <section class="simple-example">
+    <div>Item 1</div>
+    <div>Item 2</div>
+    <div>Item 3</div>
+  </section>
+
+  
+
+  <p>The interesting thing about this technique is that no floats whatsoever are being used.</p>
+
+</article> <!-- #example-1 -->
+
+
+
+
+
+
+
+
+
+
+
+
+<article class="example" id="example-2">
+
+  <header>
+    <h1>Example 2 - Orientation</h1>
+    <p>By default, items within a flexbox will flow horizontally. Here's a small example of using <code>flex-direction: column;</code> on the parent container. </p>
+    <p>Note: The parent container of the three elements has a width of 90% (just like in the first example). The child elements (item 1, item 2 and item 3) only have a height of <code>20px</code> </p>
+  </header>
+
+  <section class="orientation-example">
+    <div>Item 1</div>
+    <div>Item 2</div>
+    <div>Item 3</div>
+  </section>
+
+  <p>The default value for the <code>flex-direction</code> property is <code>row</code>.</p>
+
+</article> <!-- #example-2 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<article class="example" id="example-3">
+
+  <header>
+    <h1>Example 3 - Alignment on the main axis (flex-pack)</h1>
+    <p>We can use the <code>flex-pack</code> property to state how we wish for our items to be aligned. <code>flex-pack</code> accepts one of the following four values: <code> start, end, justify &amp; center</code> </p>
+  </header>
+
+  <h4>Start</h4>
+  <section class="alignment-example alignment-start">
+    <div>Item 1</div>
+    <div>Item 2</div>
+    <div>Item 3</div>
+  </section>
+
+  <h4>End</h4>
+  <section class="alignment-example alignment-end">
+    <div>Item 1</div>
+    <div>Item 2</div>
+    <div>Item 3</div>
+  </section>
+
+  <h4>Justify</h4>
+  <section class="alignment-example alignment-justify">
+    <div>Item 1</div>
+    <div>Item 2</div>
+    <div>Item 3</div>
+  </section>
+
+  <h4>Center</h4>
+  <section class="alignment-example alignment-center">
+    <div>Item 1</div>
+    <div>Item 2</div>
+    <div>Item 3</div>
+  </section>     
+
+  <p>Being able to center items inside a flexbox is a very powerful thing; in the future this may save developers the hassle of having to resort to hacks to achieve centering of an item within a container. The default value for the <code>flex-pack</code> property is <code>start</code>.</p>
+
+</article> <!-- #example-3 -->
+
+
+
+
+
+
+
+
+
+
+
+
+<article class="example" id="example-4">
+
+  <header>
+    <h1>Example 4 - Alignment on the cross axis (flex-align)</h1>
+    <p>We can use the <code>flex-align</code> property to state how we wish for our items to be aligned on the cross axis. <code>flex-align</code> accepts one of the following four values: <code> start, end, center, baseline &amp; stretch</code> </p>
+  </header>
+
+  <h4>Start</h4>
+  <section class="alignment-example alignment-start">
+    <div>Item 1</div>
+    <div>Item 2</div>
+    <div>Item 3</div>
+  </section>
+
+  <h4>End</h4>
+  <section class="alignment-example alignment-end">
+    <div>Item 1</div>
+    <div>Item 2</div>
+    <div>Item 3</div>
+  </section>
+
+  <h4>Center</h4>
+  <section class="alignment-example alignment-center">
+    <div>Item 1</div>
+    <div>Item 2</div>
+    <div>Item 3</div>
+  </section>
+
+  <h4>Baseline</h4>
+  <section class="alignment-example alignment-baseline">
+    <div>Item 1</div>
+    <div>Item 2</div>
+    <div>Item 3</div>
+  </section>
+
+  <h4>Stretch</h4>
+  <section class="alignment-example alignment-stretch">
+    <div>Item 1</div>
+    <div>Item 2</div>
+    <div>Item 3</div>
+  </section>      
+
+  <p>Note: All items within example 4 do not have their heights explicitly set. The heights of the parent containers (5 of them) are set at <code>60px</code>. The default value for the <code>flex-align</code> property is <code>stretch</code>. </p>
+
+</article> <!-- #example-4 -->
+
+
+
+
+
+
+
+
+
+
+
+<article class="example" id="example-5">
+
+  <header>
+    <h1>Example 5 - Using flex in order to utilise remaining space</h1>
+    <p>Using the <code>flex</code> property we can give size preference to items.</p>
+  </header>
+
+  <button class="btn" id="example5-add-item">Add Item</button>
+  <button class="btn" id="example5-remove-item">Remove Item</button>
+
+  <section class="distribute-example">
+    <div>Item 1</div>
+    <div>Item 2</div>
+    <div>Item 3</div>
+  </section>
+ 
+  <p>Note: The style <code>flex: 1;</code> has been applied on each of the three items. The items do not have their widths explicitly set and they do not have any floats applied.</p>
+
+  <p>Here's an example of using <code>flex: 2;</code> on the <strong>2nd</strong> item only (<code>div:nth-child(2)</code>) , and keeping <code>flex: 1;</code> on the remaining items. </p>
+
+  <section class="different-flex-example">
+    <div>Item 1</div>
+    <div>Item 2</div>
+    <div>Item 3</div>
+  </section>
+
+
+  <p>Here's one more example where <code>div:nth-child(2)</code> (the 2nd item) is set to <code>flex: 20;</code>.</p>
+
+  <section class="final-flex-example">
+    <div>Item 1</div>
+    <div>Item 2</div>
+    <div>Item 3</div>
+  </section>
+
+
+</article> <!-- #example-5 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<article class="example" id="example-6">
+
+  <header>
+    <h1>Example 6 - Ordering</h1>
+    <p>We can use CSS to tell the browser in what order we wish for our flexbox items to be displayed. This is made possible by using <code>flex-order</code>. In the example below, our HTML markup has 3 items, where item 1 is first, item 2 is second and item 3 is third. Using the CSS: <code>flex-order: 1</code> on the first item (<code>div:nth-child(1)</code>) we get the following.</p>
+  </header>
+
+  <section class="ordering-example">
+    <div>Item 1</div>
+    <div>Item 2</div>
+    <div>Item 3</div>
+  </section>
+
+  <p>The default value for <code>flex-order</code> is <code>0</code>.</p>
+
+</article> <!-- #example-6 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+/* Example 1 */
+
+var example1 = function () {
+  var toggleButton = document.querySelector('#example1-toggle-flexbox');
+  example1Config = {};
+  example1Config.flexbox = document.querySelector('#example-1 .simple-example');
+  example1Config.updateStatus = document.querySelector('#example1-status');
+  example1Config.originalBoxValue = example1GetDisplayProp();
+  toggleButton.addEventListener('click', example1Toggle, false);
+  example1UpdateStatus();
+};
+
+var example1GetDisplayProp = function () {
+  var style = window.getComputedStyle(example1Config.flexbox);
+  return style.display;
+};
+
+var example1SetDisplayProp = function (style) {
+  example1Config.flexbox.style.display = style;
+};
+
+var example1UpdateStatus = function () {
+  example1Config.updateStatus.innerHTML = example1GetDisplayProp();
+};
+
+var example1Toggle = function () {
+  if ( example1GetDisplayProp().match('box') ) {
+    example1SetDisplayProp('block');
+  } else {
+    example1SetDisplayProp(example1Config.originalBoxValue);
+  }
+  example1UpdateStatus();
+};
+
+
+
+
+
+
+
+
+/* Example 5 */
+var example5 = function () {
+  var addItem = document.querySelector('#example5-add-item');
+  var removeItem = document.querySelector('#example5-remove-item');
+  example5Config = {};
+  example5Config.flexbox = document.querySelector('#example-5 .distribute-example');
+  example5Config.flexbox2 = document.querySelector('#example-5 .different-flex-example');
+
+example5Config.flexboxes = [];
+example5Config.flexboxes[0] = example5Config.flexbox = document.querySelector('#example-5 .distribute-example');
+example5Config.flexboxes[1] = document.querySelector('#example-5 .different-flex-example');
+example5Config.flexboxes[2] = document.querySelector('#example-5 .final-flex-example');
+  example5Config.itemCount = example5Config.flexbox.childElementCount;
+  addItem.addEventListener('click', example5AddItem, false);
+  removeItem.addEventListener('click', example5RemoveItem, false);
+};
+
+var example5AddItem = function () {
+  ++example5Config.itemCount;
+  for (var i=0, length = example5Config.flexboxes.length; i<length; i++) {
+    var newItem = document.createElement("div");
+    newItem.innerHTML = 'Item ' + example5Config.itemCount;
+    example5Config.flexboxes[i].appendChild(newItem);
+  }
+};
+
+var example5RemoveItem = function () {
+  if ( example5Config.itemCount !== 1 ) {
+    --example5Config.itemCount;
+    for (var i=0, length = example5Config.flexboxes.length; i<length; i++) {
+      var toRemove = example5Config.flexboxes[i].children[ example5Config.itemCount ];
+      example5Config.flexboxes[i].removeChild(toRemove);
+    } 
+  }
+};
+
+
+var autorun = function() {
+  
+  example1();
+  example5();
+
+};
+
+if (document.addEventListener) document.addEventListener("DOMContentLoaded", autorun, false);
+else if (document.attachEvent) document.attachEvent("onreadystatechange", autorun);
+else window.onload = autorun;
+
+</script>
+
+</body>
+</html>
